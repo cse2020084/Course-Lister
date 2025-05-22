@@ -1,0 +1,186 @@
+/* CSS Styles */
+main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Full-width banner section */
+.banner-section {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.banner-image {
+  width: 100%;
+  height: 500px;
+  background-image: url('/assets/wallpaper/front-cover.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Optional overlay to improve text readability */
+.banner-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3); /* Dark overlay - adjust opacity as needed */
+  z-index: 1;
+}
+
+/* Banner content styling */
+.banner-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  max-width: 800px;
+  padding: 0 20px;
+}
+
+.banner-content h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.banner-content p {
+  font-size: 20px;
+  margin-bottom: 30px;
+  line-height: 1.6;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.cta-button {
+  padding: 12px 30px;
+  font-size: 18px;
+  background-color: #3498db;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+  background-color: #2980b9;
+}
+
+/* Container for the rest of your content */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+  /* Styling for your main content */
+
+  .containers {
+  // max-width: 1200px;
+  // margin: 0 auto;
+  // padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+
+    .horizontal-containers{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around;
+      gap: 100px;
+    }
+
+    .example-card {
+      max-width: 220px;
+      aspect-ratio: 3/4;
+      display: flex;
+      flex-direction: column;
+
+      //for styling of cards
+
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+
+      &:hover{
+        cursor: pointer;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.16);
+        transform: translateY(-4px);
+      }
+
+      mat-card-header{
+        .example-header-image {
+            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+            background-size: cover;
+          }
+      }
+
+      //  // Image sizing control
+      // img[mat-card-image] {
+      //   height: 200px;
+      //   object-fit: cover;
+      //   width: 100%;
+      // }
+
+
+
+      mat-card-content {
+        padding: 10px;
+        flex-grow: 1; // This pushes actions to bottom
+        
+        p {
+          margin: 0;
+          line-height: 1.5;
+          // Limit text for consistent card heights
+          display: -webkit-box;
+          -webkit-line-clamp: 5;
+          -webkit-box-orient: vertical;
+          overflow: hidden;
+        }
+      }
+
+      mat-card-actions{
+        position: sticky;
+      }
+
+
+    }
+
+
+}
+
+
+
+
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .banner-image {
+    height: 350px;
+  }
+  
+  .banner-content h1 {
+    font-size: 32px;
+  }
+  
+  .banner-content p {
+    font-size: 16px;
+  }
+
+  .main-content{
+    
+    .containers{
+      .horizontal-containers{
+        justify-content: center;
+      }
+    }
+
+  }
+}

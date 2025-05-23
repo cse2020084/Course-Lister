@@ -98,10 +98,11 @@ main {
     }
 
     .example-card {
-      max-width: 220px;
-      aspect-ratio: 3/4;
+      max-width: 250px;
+      // aspect-ratio: 3/4;
       display: flex;
       flex-direction: column;
+      height: 500px;
 
       //for styling of cards
 
@@ -116,22 +117,31 @@ main {
 
       mat-card-header{
         .example-header-image {
-            background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+            background-image: url('/assets/wallpaper/header.png');
             background-size: cover;
+          }
+
+          mat-card-title{
+            display: -webkit-box;
+            -webkit-line-clamp: 1; // Limit title to 2 lines
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            line-height: 1.2;
           }
       }
 
-      //  // Image sizing control
-      // img[mat-card-image] {
-      //   height: 200px;
-      //   object-fit: cover;
-      //   width: 100%;
-      // }
+       // Image sizing control
+      img[mat-card-image] {
+        // height: 50%;
+        // width: 100%;
+        object-fit: cover;
+        padding: 20px 25px 0 25px;
+      }
 
 
 
       mat-card-content {
-        padding: 10px;
+        padding: 10px 10px 0 10px;
         flex-grow: 1; // This pushes actions to bottom
         
         p {

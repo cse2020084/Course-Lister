@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1,
+    "title": "Arts Course",
+    "subtitle": "Angular Framework",
+    "description": "Learn Angular from basics to advanced concepts. Build modern web applications with TypeScript, components, and services.",
+    "image": "wallpaper/arts.png",
+    "avatar": "wallpaper/header.png",
+    "actions": ["ENROLL", "PREVIEW"]
+  },
+  {
+    "id": 2,
+    "title": "Science Course",
+    "subtitle": "JavaScript Library",
+    "description": "Master React development with hooks, context, and modern patterns.",
+    "image": "wallpaper/science.png",
+    "avatar": "wallpaper/header.png",
+    "actions": ["ENROLL", "WISHLIST"]
+  },
+  {
+    "id": 3,
+    "title": "Commerce Course",
+    "subtitle": "Server Development",
+    "description": "Build scalable backend applications with Node.js, Express, and MongoDB. Learn API development, authentication, and deployment strategies for production-ready applications.",
+    "image": "wallpaper/commerce.png",
+    "avatar": "wallpaper/header.png",
+    "actions": ["ENROLL", "SHARE"]
+  }
+]

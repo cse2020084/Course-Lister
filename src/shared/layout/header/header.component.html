@@ -14,8 +14,9 @@
         </ul>
       </nav>
       <div class="auth-buttons">
-        <button class="btn btn-login">Login</button>
-        <button class="btn btn-signup">Sign Up</button>
+        <!-- <button class="btn btn-login">Login</button> -->
+         <!-- Router Navigation in TypeScript is better approach altogether for flexibility -->
+        <button class="btn btn-signup" (click)="navigateToSignUp()">Sign Up</button>
       </div>
     </div>
   </div>

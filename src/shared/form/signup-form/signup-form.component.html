@@ -1,0 +1,79 @@
+<div class="container">
+    <pre>{{form.value | json}}</pre>
+    <form class="form-group" action="" [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Name</label>
+            <input type="text" formControlName="name" class="form-control ">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label"> Email</label>
+            <input type="email" formControlName="email" class="form-control">
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Phone</label>
+            <input type="text" formControlName="mobile" class="form-control">
+        </div>
+
+
+        <div class="col-md-4 mb-3 form-group" formArrayName="altPhone" >
+            <div class="d-flex align-item-center mb-2" *ngFor="let altphone of getAltPhone.controls; let i = index">
+                <input type="text" class="form-control flex-grow-1" [formControlName]="i">
+                <button class="btn ms-2" (click)="removeAltPhone(i)">&times;</button>
+            </div>
+            <button class="btn btn-sm btn-secondary" (click)="addAltPhone()">Add Another Number</button>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Choose Your Profession</label>
+            <div class="form-check">
+                <label for="" class="form-check-label">
+                    <input type="radio" name="job" id="" formControlName="job" class="form-check-input" value="student">
+                    Student
+                </label>
+            </div>
+            <div class="form-check">
+                <label for="" class="form-check-label">
+                    <input type="radio" name="job" formControlName="job" class="form-check-input" value="working-professional">
+                    Working Professional
+                </label>
+            </div>
+        </div>
+
+        <div class="form-group" formGroupName="address">
+            <div class="col-md-4 mb-3">
+                <label for="" class="form-label">Country</label>
+                <select class="form-select form-select-sm" name="country" id="" formControlName="country">
+                    <option value="" disabled >Select Country</option>
+                    <option *ngFor="let country of countries" [value]="country">{{country}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="" class="form-label">State</label>
+                <select name="state" id="" class="form-select form-select-sm" formControlName="state">
+                    <option value=""  disabled>Choose State</option>
+                    <option *ngFor="let state of states" [value]="state">{{state}}</option>
+                </select>
+            </div>
+
+            <div class="col-md-4 mb-3">
+                <label for="" class="form-label">City</label>
+                <select name="city" id="" class="form-select form-select-sm" formControlName="city">
+                    <option value=""  disabled>Choose City</option>
+                    <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <div class="form-check">
+                <input type="checkbox" name="check" id="" class="form-check-input" formControlName="check">
+                <label for="" class="form-check-label">Please Confirm Above Information</label>
+            </div>
+        </div>
+
+        <button class="btn btn-success mb-3" type="submit">Submit</button>
+    </form>
+</div>

@@ -3,26 +3,65 @@
     <form class="form-group" action="" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="col-md-4 mb-3">
             <label for="" class="form-label">Name</label>
-            <input type="text" formControlName="name" class="form-control ">
+            <input type="text" formControlName="name" class="form-control" [ngClass]="{'is-invalid':nameControl?.touched && nameControl?.invalid}" placeholder="Enter Name">
+            <div *ngIf="nameControl?.touched && nameControl?.invalid" >
+                <small *ngIf="nameControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your name.</small>
+                <small *ngIf="nameControl?.hasError('forbiddenName')" class="d-block invalid-feedback" >Please enter correct name</small>
+            </div>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="" class="form-label"> Email</label>
-            <input type="email" formControlName="email" class="form-control">
+            <input type="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid':emailControl?.touched && emailControl?.invalid}" placeholder="Enter Email">
+            <div *ngIf="emailControl?.touched && emailControl?.invalid" >
+                <small *ngIf="emailControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your email.</small>
+                <small *ngIf="emailControl?.hasError('email')" class="d-block invalid-feedback" >Please provide correct mail</small>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Password</label>
+            <input type="password" name="" formControlName="password" id="" class="form-control" [ngClass]="{'is-invalid':passwordControl?.touched && passwordControl?.invalid}" placeholder="Enter password">
+            <div *ngIf="passwordControl?.touched && passwordControl?.invalid" >
+                <small *ngIf="passwordControl?.hasError('required')" class="d-block invalid-feedback" >Please enter password.</small>
+                <small *ngIf="passwordControl?.hasError('pattern')" class="d-block invalid-feedback" >Please provide correct password</small>
+            </div>
+        </div>
+
+        <div class="col-md-4 mb-3">
+            <label for="" class="form-label">Confirm Password</label>
+            <input type="password" name="" id="" formControlName="confirmpw" class="form-control" [ngClass]="{'is-invalid':confirmpwControl?.touched && confirmpwControl?.invalid}" placeholder="Confirm password">
+            <div *ngIf="confirmpwControl?.touched && confirmpwControl?.invalid" >
+                <small *ngIf="confirmpwControl?.hasError('required')" class="d-block invalid-feedback" >Please enter password.</small>
+                <small *ngIf="confirmpwControl?.hasError('pattern')" class="d-block invalid-feedback" >Please provide correct password</small>
+                 <small *ngIf="confirmpwControl?.hasError('notSamePassword')" class="d-block invalid-feedback" >Please Confirm the Password</small>
+            </div>
         </div>
 
         <div class="col-md-4 mb-3">
             <label for="" class="form-label">Phone</label>
-            <input type="text" formControlName="mobile" class="form-control">
+            <input type="text" formControlName="mobile" class="form-control" [ngClass]="{'is-invalid':mobileControl?.touched && mobileControl?.invalid}" placeholder="Enter Mobile Number">
+            <div *ngIf="mobileControl?.touched && mobileControl?.invalid" >
+                <small *ngIf="mobileControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your mobile number.</small>
+                <small *ngIf="mobileControl?.hasError('pattern')" class="d-block invalid-feedback">Please Enter Correct Mobile Number</small>
+            </div>
         </div>
 
 
         <div class="col-md-4 mb-3 form-group" formArrayName="altPhone" >
-            <div class="d-flex align-item-center mb-2" *ngFor="let altphone of getAltPhone.controls; let i = index">
-                <input type="text" class="form-control flex-grow-1" [formControlName]="i">
-                <button class="btn ms-2" (click)="removeAltPhone(i)">&times;</button>
-            </div>
-            <button class="btn btn-sm btn-secondary" (click)="addAltPhone()">Add Another Number</button>
+            <div class=" mb-2" *ngFor="let alt of getAltPhone.controls; let i = index">
+                <label for="" *ngIf="i>=0" class="form-label">Alternate Phone {{i+1}}</label>
+                <div class="d-flex">
+                    <input type="text" class="form-control flex-grow-1" [formControlName]="i" [ngClass]="{'is-invalid':alt?.touched && alt?.invalid}" placeholder="Enter MobileNumber">
+                    <button class="btn ms-2" (click)="removeAltPhone(i)">&times;</button>
+                </div>
+
+                <div *ngIf="alt?.touched && alt?.invalid" >
+                    <small *ngIf="alt?.hasError('required')" class="d-block invalid-feedback" >Please enter your mobile number.</small>
+                    <small *ngIf="alt?.hasError('pattern')" class="d-block invalid-feedback">Please Enter Correct Mobile Number</small>
+                </div>
+            </div>       
+            <button class="btn btn-sm btn-secondary" (mousedown)="addAltPhone()">Add Another Number</button>
         </div>
 
         <div class="col-md-4 mb-3">
@@ -39,6 +78,9 @@
                     Working Professional
                 </label>
             </div>
+            <div *ngIf="jobControl?.touched && jobControl?.invalid" >
+                <small *ngIf="jobControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your Profession.</small>
+            </div>
         </div>
 
         <div class="form-group" formGroupName="address">
@@ -48,6 +90,9 @@
                     <option value="" disabled >Select Country</option>
                     <option *ngFor="let country of countries" [value]="country">{{country}}</option>
                 </select>
+                <div *ngIf="countryControl?.touched && countryControl?.invalid" >
+                    <small *ngIf="countryControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your country.</small>
+                </div>
             </div>
 
             <div class="col-md-4 mb-3">
@@ -56,6 +101,9 @@
                     <option value=""  disabled>Choose State</option>
                     <option *ngFor="let state of states" [value]="state">{{state}}</option>
                 </select>
+                <div *ngIf="stateControl?.touched && stateControl?.invalid" >
+                    <small *ngIf="stateControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your state.</small>
+                </div>
             </div>
 
             <div class="col-md-4 mb-3">
@@ -64,12 +112,15 @@
                     <option value=""  disabled>Choose City</option>
                     <option *ngFor="let city of cities" [value]="city">{{city}}</option>
                 </select>
+                <div *ngIf="cityControl?.touched && cityControl?.invalid" >
+                    <small *ngIf="cityControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your city.</small>
+                </div>
             </div>
         </div>
 
         <div class="col-md-4 mb-3">
             <div class="form-check">
-                <input type="checkbox" name="check" id="" class="form-check-input" formControlName="check">
+                <input type="checkbox" name="check" id="" class="form-check-input" formControlName="check" [ngClass]="{'is-invalid':checkControl.touched && checkControl.invalid}">
                 <label for="" class="form-check-label">Please Confirm Above Information</label>
             </div>
         </div>

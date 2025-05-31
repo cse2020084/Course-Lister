@@ -37,6 +37,14 @@ export class LocationDataService {
   }
 
   setUpStateList(selectedCountry:string):string[]{
+    /**
+     * any time if you want to get string as key and object as value 
+     * and you want key of those object (value),
+     * go in object directly using "original_object[key]"
+     * 
+     * also you can use original_object?.[key] , it is more correct
+     *  you need the "?." for optional chaining:
+    */
     if(this.locationData[selectedCountry]){
       return Object.keys(this.locationData[selectedCountry]);
     }

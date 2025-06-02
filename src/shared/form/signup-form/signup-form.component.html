@@ -1,9 +1,11 @@
-<div class="container">
-    <pre>{{form.value | json}}</pre>
+
+<div class="container mt-4">
+    <h2 class="heading-registration col-md-4">Registration:</h2>
+    <!-- <pre>{{form.value | json}}</pre> -->
     <form class="form-group" action="" [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label">Name</label>
-            <input type="text" formControlName="name" class="form-control" [ngClass]="{'is-invalid':nameControl?.touched && nameControl?.invalid}" placeholder="Enter Name">
+            <label for="name" class="form-label">Name</label>
+            <input type="text" id="name" formControlName="name" class="form-control" [ngClass]="{'is-invalid':nameControl?.touched && nameControl?.invalid}" placeholder="Enter Name">
             <div *ngIf="nameControl?.touched && nameControl?.invalid" >
                 <small *ngIf="nameControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your name.</small>
                 <small *ngIf="nameControl?.hasError('forbiddenName')" class="d-block invalid-feedback" >Please enter correct name</small>
@@ -11,8 +13,8 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label"> Email</label>
-            <input type="email" formControlName="email" class="form-control" [ngClass]="{'is-invalid':emailControl?.touched && emailControl?.invalid}" placeholder="Enter Email">
+            <label for="email" class="form-label"> Email</label>
+            <input type="email" formControlName="email" id="email" class="form-control" [ngClass]="{'is-invalid':emailControl?.touched && emailControl?.invalid}" placeholder="Enter Email">
             <div *ngIf="emailControl?.touched && emailControl?.invalid" >
                 <small *ngIf="emailControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your email.</small>
                 <small *ngIf="emailControl?.hasError('email')" class="d-block invalid-feedback" >Please provide correct mail</small>
@@ -20,8 +22,8 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label">Password</label>
-            <input type="password" name="" formControlName="password" id="" class="form-control" [ngClass]="{'is-invalid':passwordControl?.touched && passwordControl?.invalid}" placeholder="Enter password">
+            <label for="password" class="form-label">Password</label>
+            <input type="password"  formControlName="password" id="password" class="form-control" [ngClass]="{'is-invalid':passwordControl?.touched && passwordControl?.invalid}" placeholder="Enter password">
             <div *ngIf="passwordControl?.touched && passwordControl?.invalid" >
                 <small *ngIf="passwordControl?.hasError('required')" class="d-block invalid-feedback" >Please enter password.</small>
                 <small *ngIf="passwordControl?.hasError('pattern')" class="d-block invalid-feedback" >Please provide correct password</small>
@@ -29,8 +31,8 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label">Confirm Password</label>
-            <input type="password" name="" id="" formControlName="confirmpw" class="form-control" [ngClass]="{'is-invalid':confirmpwControl?.touched && confirmpwControl?.invalid}" placeholder="Confirm password">
+            <label for="confirmpw" class="form-label">Confirm Password</label>
+            <input type="password"  id="confirmpw" formControlName="confirmpw" class="form-control" [ngClass]="{'is-invalid':confirmpwControl?.touched && confirmpwControl?.invalid}" placeholder="Confirm password">
             <div *ngIf="confirmpwControl?.touched && confirmpwControl?.invalid" >
                 <small *ngIf="confirmpwControl?.hasError('required')" class="d-block invalid-feedback" >Please enter password.</small>
                 <small *ngIf="confirmpwControl?.hasError('pattern')" class="d-block invalid-feedback" >Please provide correct password</small>
@@ -39,7 +41,7 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label">Phone</label>
+            <label for="Phone" class="form-label">Phone</label>
             <input type="text" formControlName="mobile" class="form-control" [ngClass]="{'is-invalid':mobileControl?.touched && mobileControl?.invalid}" placeholder="Enter Mobile Number">
             <div *ngIf="mobileControl?.touched && mobileControl?.invalid" >
                 <small *ngIf="mobileControl?.hasError('required')" class="d-block invalid-feedback" >Please enter your mobile number.</small>
@@ -50,7 +52,7 @@
 
         <div class="col-md-4 mb-3 form-group" formArrayName="altPhone" >
             <div class=" mb-2" *ngFor="let alt of getAltPhone.controls; let i = index">
-                <label for="" *ngIf="i>=0" class="form-label">Alternate Phone {{i+1}}</label>
+                <label for="alt" *ngIf="i>=0" class="form-label">Alternate Phone {{i+1}}</label>
                 <div class="d-flex">
                     <input type="text" class="form-control flex-grow-1" [formControlName]="i" [ngClass]="{'is-invalid':alt?.touched && alt?.invalid}" placeholder="Enter MobileNumber">
                     <button class="btn ms-2" (click)="removeAltPhone(i)">&times;</button>
@@ -65,16 +67,16 @@
         </div>
 
         <div class="col-md-4 mb-3">
-            <label for="" class="form-label">Choose Your Profession</label>
+            <label for="job" class="form-label">Choose Your Profession</label>
             <div class="form-check">
-                <label for="" class="form-check-label">
-                    <input type="radio" name="job" id="" formControlName="job" class="form-check-input" value="student">
+                <label for="job-student" class="form-check-label">
+                    <input type="radio" name="job" id="job-student" formControlName="job" class="form-check-input" value="student">
                     Student
                 </label>
             </div>
             <div class="form-check">
-                <label for="" class="form-check-label">
-                    <input type="radio" name="job" formControlName="job" class="form-check-input" value="working-professional">
+                <label for="job-working-professional" class="form-check-label">
+                    <input type="radio" name="job" id="job-working-professional" formControlName="job" class="form-check-input" value="working-professional">
                     Working Professional
                 </label>
             </div>
@@ -85,8 +87,8 @@
 
         <div class="form-group" formGroupName="address">
             <div class="col-md-4 mb-3">
-                <label for="" class="form-label">Country</label>
-                <select class="form-select form-select-sm" name="country" id="" formControlName="country">
+                <label for="country" class="form-label">Country</label>
+                <select class="form-select form-select-sm" name="country" id="country" formControlName="country">
                     <option value="" disabled >Select Country</option>
                     <option *ngFor="let country of countries" [value]="country">{{country}}</option>
                 </select>
@@ -95,9 +97,9 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mb-3">
-                <label for="" class="form-label">State</label>
-                <select name="state" id="" class="form-select form-select-sm" formControlName="state">
+            <div class="col-md-4 mb-3" *ngIf="stateControl">
+                <label for="state" class="form-label">State</label>
+                <select name="state" id="state" class="form-select form-select-sm" formControlName="state">
                     <option value=""  disabled>Choose State</option>
                     <option *ngFor="let state of states" [value]="state">{{state}}</option>
                 </select>
@@ -106,9 +108,9 @@
                 </div>
             </div>
 
-            <div class="col-md-4 mb-3">
-                <label for="" class="form-label">City</label>
-                <select name="city" id="" class="form-select form-select-sm" formControlName="city">
+            <div class="col-md-4 mb-3" *ngIf="cityControl">
+                <label for="city" class="form-label">City</label>
+                <select name="city" id="city" class="form-select form-select-sm" formControlName="city">
                     <option value=""  disabled>Choose City</option>
                     <option *ngFor="let city of cities" [value]="city">{{city}}</option>
                 </select>
@@ -120,8 +122,8 @@
 
         <div class="col-md-4 mb-3">
             <div class="form-check">
-                <input type="checkbox" name="check" id="" class="form-check-input" formControlName="check" [ngClass]="{'is-invalid':checkControl.touched && checkControl.invalid}">
-                <label for="" class="form-check-label">Please Confirm Above Information</label>
+                <input type="checkbox" name="check" id="check" class="form-check-input" formControlName="check" [ngClass]="{'is-invalid':checkControl.touched && checkControl.invalid}">
+                <label for="check" class="form-check-label">Please Confirm Above Information</label>
             </div>
         </div>
 

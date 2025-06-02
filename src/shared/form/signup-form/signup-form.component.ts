@@ -110,11 +110,14 @@ export class SignupFormComponent implements OnInit {
       this.onCountryChange(value);
     },error=> console.log(error));
 
-    this.stateControl.valueChanges
-    .pipe(takeUntil(this.destroy$))
-    .subscribe((value:string)=>{
-      this.onStateChange(value);
-    },error=> console.log(error));
+    if(this.stateControl){
+        this.stateControl.valueChanges
+        .pipe(takeUntil(this.destroy$))
+        .subscribe((value:string)=>{
+          this.onStateChange(value);
+        },error=> console.log(error));
+    }
+
   }
 
   // Getters for form controls
@@ -166,11 +169,15 @@ export class SignupFormComponent implements OnInit {
     return this.form.get('altPhone')  as FormArray;
   }
 
+
+
   onCountryChange(selectedCountry:string){
     this.removeState();
     this.removeCity();
 
     this.states=this.location.setUpStateList(selectedCountry);
+
+    this.addStateControl();
   }
 
   onStateChange(selectedState:string){
@@ -189,6 +196,12 @@ export class SignupFormComponent implements OnInit {
     if(this.cityControl){
       this.cityControl.reset('');
     }
+  }
+
+  addStateControl(){
+    //here in future you can use to dynamically add state control
+    // by this code
+    // this.addressGroup.addControl('state',new FormControl('',[Validators.required]));
   }
 
   addAltPhone(){

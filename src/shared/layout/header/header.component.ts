@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
         this.router.navigateByUrl(`/signup/${userId}?tab=profile`);
    */
   navigateToSignUp(){
+    console.log('clicked on signup button')
     this.router.navigate(['/auth/signup']);
   }
 

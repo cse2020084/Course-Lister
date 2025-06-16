@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { DashboardRoutingModule } from './dashboard-routing.module';
 import { MainPageComponent } from './main-page/main-page.component';
 import { MaterialModule } from 'src/shared/common/material.module';
+import { SharedModule } from 'src/shared/shared.module';
 
 
 @NgModule({
@@ -11,7 +12,8 @@ import { MaterialModule } from 'src/shared/common/material.module';
   imports: [
     CommonModule,
     DashboardRoutingModule,
-    MaterialModule
+    // MaterialModule,
+    SharedModule
   ]
 })
 export class DashboardModule { }

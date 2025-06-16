@@ -35,10 +35,10 @@ export class HeaderComponent implements OnInit {
    *   this.router.navigateByUrl('/auth/signup') - Takes complete URL string, more direct but less flexible
    * 
    *   // Better - flexible, handles params easily
-        this.router.navigate(['/signup', userId], { queryParams: { tab: 'profile' }});
+        this.router.navigate(['/auth/signup', userId], { queryParams: { tab: 'profile' }});
 
         // vs navigateByUrl - you'd build the string manually
-        this.router.navigateByUrl(`/signup/${userId}?tab=profile`);
+        this.router.navigateByUrl(`/auth/signup/${userId}?tab=profile`);
    */
   navigateToSignUp(){
     console.log('clicked on signup button')

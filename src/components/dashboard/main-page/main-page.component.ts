@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GeneralMasterService } from 'src/shared/services/general-master.service';
 import { map } from 'rxjs/operators';
 
@@ -9,6 +9,12 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./main-page.component.scss']
 })
 export class MainPageComponent implements OnInit {
+  /**
+   * both are same, one is js centric , other is angular
+   * @ViewChild('myElement') myElement!: ElementRef;
+   * document.getElementById('myElement')
+   */
+  @ViewChild('mainContentSection') mainContentSection:ElementRef;
   public mainCourses:any[]=[];
 
   constructor(
@@ -31,6 +37,10 @@ export class MainPageComponent implements OnInit {
     (error)=>{
       this.mainCourses=[];
     })
+  }
+
+  exploreCourseButton(){
+    this.mainContentSection.nativeElement.scrollIntoView({behavior:'smooth'});
   }
 
 }

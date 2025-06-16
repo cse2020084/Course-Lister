@@ -22,7 +22,7 @@ main {
   position: relative;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 /* Optional overlay to improve text readability */
@@ -80,7 +80,7 @@ main {
 .main-content {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 80px 20px;
   /* Styling for your main content */
 
   .containers {

@@ -6,14 +6,14 @@
       <div class="banner-content">
         <h1>Welcome to Course Lister</h1>
         <p>Find the perfect course to enhance your skills and advance your career</p>
-        <button class="cta-button">Explore Courses</button>
+        <button class="cta-button" (click)="exploreCourseButton()">Explore Courses</button>
       </div>
     </div>
   </section>
   
   <!-- Container for the rest of your content -->
 
-    <section class="main-content">
+    <section class="main-content" #mainContentSection>
       <div class="containers">
         <div class="horizontal-containers">
         <!-- Your other content here -->

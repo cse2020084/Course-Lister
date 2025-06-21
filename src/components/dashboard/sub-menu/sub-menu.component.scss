@@ -1,0 +1,116 @@
+.main-content{
+    padding: 80px 40px;
+    background-color: #f9f9f9;
+    width: 100%;
+
+
+    .containers{
+        // max-width: 1200px;
+        max-width: 100%;
+        display: flex;
+        flex-direction: column;
+        .card-containers{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 100px;
+
+            .example-card{
+                max-width: 250px;
+                min-width: 250px;
+                // aspect-ratio: 3/4;
+                display: flex;
+                flex-direction: column;
+                height: 500px;
+
+                //for styling of cards
+
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+                transition: box-shadow 0.3s ease, transform 0.3s ease; 
+                
+                &:hover{
+                    cursor: pointer;
+                    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.12);
+                    transform: translateY(-5px);
+                }
+                
+                mat-card-header{
+                    height: 80px;
+                    flex-shrink: 0; // Prevent header from shrinking
+                    .example-header-image {
+                        background-image: url('/assets/wallpaper/header.png');
+                        background-size: cover;
+                        flex-shrink: 0;
+                    }
+
+                    mat-card-title{
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; // Limit title to 2 lines
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        line-height: 1.2;
+                        height: 2.4em;
+                    }
+
+                    mat-card-subtitle{
+                        display: -webkit-box;
+                        -webkit-line-clamp: 2; // Limit subtitle to 1 line
+                        -webkit-box-orient: vertical;
+                        overflow: hidden;
+                        line-height: 1.2;
+                        // height: 1.2em; // Fixed height for 1 line
+
+                        overflow: hidden;
+                        font-size: 12px; // Smaller font size
+                        line-height: 1.3; // Proportional line-height
+                        height: 2.6em; // Height for 2 lines (2 * 1.3em)
+                        // margin-top: 2px; // Small gap from title
+                    }
+
+                    
+                                    
+                }
+                .image-container{
+                    height: 180px;
+                    // padding: 0 25px;
+                    flex-shrink: 0;
+                    margin-top: 20px;
+                    margin-left: 20px;
+                    img{
+                        height: 90%;
+                        // height: 180px;
+                        width: 100%;
+                        // object-fit: cover;
+                        padding: 20px 25px 0 25px;
+                        border-radius: 4px;
+                    }                   
+                }
+
+
+
+
+                mat-card-content {
+                    padding: 10px 10px 0 10px;
+                    flex-grow: 1; // This pushes actions to bottom
+                    
+                    p {
+                    margin: 0;
+                    line-height: 1.5;
+                    // Limit text for consistent card heights
+                    display: -webkit-box;
+                    -webkit-line-clamp: 5;
+                    -webkit-box-orient: vertical;
+                    overflow: hidden;
+                    }
+                }
+
+                mat-card-actions{
+                    position: sticky;
+                    display: flex;
+                    gap:8px;
+                }
+
+            }
+        }
+    }
+}

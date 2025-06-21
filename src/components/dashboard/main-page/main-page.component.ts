@@ -1,6 +1,7 @@
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
 import { GeneralMasterService } from 'src/shared/services/general-master.service';
 import { map } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -19,6 +20,7 @@ export class MainPageComponent implements OnInit {
 
   constructor(
     private generalMasterService:GeneralMasterService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -30,13 +32,17 @@ export class MainPageComponent implements OnInit {
     .pipe(map((m:any)=>{
       return m.filter(f=>f.hasOwnProperty('id'))
     }))
-    .subscribe((value:any[])=>{
+    .subscribe((value)=>{
       this.mainCourses=value;
       console.log('maincourse',this.mainCourses)
     },
     (error)=>{
       this.mainCourses=[];
     })
+  }
+
+  preview(courses){
+    this.router.navigate(['/dashboard/sub-menu',courses.id]);
   }
 
   exploreCourseButton(){

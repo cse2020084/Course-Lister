@@ -1,0 +1,170 @@
+[
+  {
+    "category": "Art",
+    "superID":1,
+    "courses": [
+      {
+        "id": "art101",
+        "title": "Introduction to Painting",
+        "subtitle": "Explore the basics of painting techniques",
+        "description": "Learn color theory, brushwork, and composition in this foundational painting course designed for beginners.",
+        "image": "wallpaper/painting.png",
+        "avatar": "wallpaper/arts.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "6 weeks",
+          "level": "Beginner",
+          "language": "English",
+          "materialsRequired": true
+        }
+      },
+      {
+        "id": "art202",
+        "title": "Digital Illustration Masterclass",
+        "subtitle": "Master the tools and techniques of digital art",
+        "description": "Dive into digital illustration using tools like Procreate and Photoshop, guided by industry professionals.",
+        "image": "wallpaper/digital-art.png",
+        "avatar": "wallpaper/arts.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "8 weeks",
+          "level": "Intermediate",
+          "language": "English",
+          "softwareRequired": ["Procreate", "Photoshop"]
+        }
+      },
+      {
+        "id": "art303",
+        "title": "Sculpture Techniques",
+        "subtitle": "Working with clay, metal, and wood",
+        "description": "A hands-on course teaching sculpting fundamentals, suitable for both hobbyists and aspiring professionals.",
+        "image": "wallpaper/sculpture.png",
+        "avatar": "wallpaper/arts.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "10 weeks",
+          "level": "All Levels",
+          "language": "Hindi, English",
+          "toolkitIncluded": true
+        }
+      },
+      {
+        "id": "art404",
+        "title": "Modern Art and Critique",
+        "subtitle": "Understanding the evolution and impact of modern art",
+        "description": "Analyze key movements in modern art and develop critical skills to interpret artistic works.",
+        "image": "wallpaper/modern-art.jpeg",
+        "avatar": "wallpaper/arts.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "4 weeks",
+          "level": "Advanced",
+          "language": "English",
+          "includesGalleryVisit": true
+        }
+      }
+    ]
+  },
+  {
+    "category": "Science",
+    "superID":2,
+    "courses": [
+      {
+        "id": "sci101",
+        "title": "Basics of Physics",
+        "subtitle": "Understand the laws of motion and energy",
+        "description": "Get introduced to classical mechanics and basic concepts of physics through interactive modules.",
+        "image": "wallpaper/physics.jpg",
+        "avatar": "wallpaper/science.png",
+        "actions": ["ENROLL", "PREVIEW"],
+        "others": {
+          "duration": "5 weeks",
+          "level": "Beginner",
+          "language": "English",
+          "labSessions": true
+        }
+      },
+      {
+        "id": "sci202",
+        "title": "Organic Chemistry",
+        "subtitle": "Dive into the world of carbon compounds",
+        "description": "A detailed exploration of organic molecules, reactions, and mechanisms.",
+        "image": "wallpaper/chemistry.jpg",
+        "avatar": "wallpaper/science.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "6 weeks",
+          "level": "Intermediate",
+          "language": "English",
+          "prerequisite": "Basic Chemistry"
+        }
+      },
+      {
+        "id": "sci303",
+        "title": "Introduction to Astronomy",
+        "subtitle": "Explore the universe beyond Earth",
+        "description": "Discover planets, stars, and galaxies using modern telescopic data.",
+        "image": "wallpaper/astronomy.jpg",
+        "avatar": "wallpaper/science.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "7 weeks",
+          "level": "All Levels",
+          "language": "English",
+          "telescopeAccess": true
+        }
+      }
+    ]
+  },
+  {
+    "category": "Commerce",
+    "superID":3,
+    "courses": [
+      {
+        "id": "com101",
+        "title": "Principles of Accounting",
+        "subtitle": "Master the language of business",
+        "description": "Understand the basic concepts of accounting, journal entries, ledgers, and financial statements.",
+        "image": "wallpaper/accounting.jpg",
+        "avatar": "wallpaper/commerce.png",
+        "actions": ["ENROLL", "AUDIT"],
+        "others": {
+          "duration": "6 weeks",
+          "level": "Beginner",
+          "language": "English",
+          "software": ["Tally", "Excel"]
+        }
+      },
+      {
+        "id": "com202",
+        "title": "Microeconomics Explained",
+        "subtitle": "Learn how individual markets work",
+        "description": "From demand-supply to elasticity and market structures, this course covers it all.",
+        "image": "wallpaper/economics.jpg",
+        "avatar": "wallpaper/commerce.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "4 weeks",
+          "level": "Intermediate",
+          "language": "English",
+          "includesCaseStudies": true
+        }
+      },
+      {
+        "id": "com303",
+        "title": "Business Law Basics",
+        "subtitle": "Legal aspects every entrepreneur should know",
+        "description": "Learn about contracts, partnerships, company law, and more.",
+        "image": "wallpaper/business-law.jpg",
+        "avatar": "wallpaper/commerce.png",
+        "actions": ["ENROLL"],
+        "others": {
+          "duration": "5 weeks",
+          "level": "All Levels",
+          "language": "English",
+          "certificateProvided": true
+        }
+      }
+    ]
+  }
+]

@@ -6,7 +6,7 @@
     "description": "Learn Angular from basics to advanced concepts. Build modern web applications with TypeScript, components, and services.",
     "image": "wallpaper/arts.png",
     "avatar": "wallpaper/header.png",
-    "actions": ["ENROLL", "PREVIEW"]
+    "actions": [ "PREVIEW"]
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "description": "Master React development with hooks, context, and modern patterns.",
     "image": "wallpaper/science.png",
     "avatar": "wallpaper/header.png",
-    "actions": ["ENROLL", "WISHLIST"]
+    "actions": ["PREVIEW"]
   },
   {
     "id": 3,
@@ -24,6 +24,6 @@
     "description": "Build scalable backend applications with Node.js, Express, and MongoDB. Learn API development, authentication, and deployment strategies for production-ready applications.",
     "image": "wallpaper/commerce.png",
     "avatar": "wallpaper/header.png",
-    "actions": ["ENROLL", "SHARE"]
+    "actions": ["PREVIEW"]
   }
 ]

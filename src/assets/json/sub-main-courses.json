@@ -1,10 +1,11 @@
 [
   {
-    "category": "Art",
+    "category": "art",
     "superID":1,
     "courses": [
       {
         "id": "art101",
+        "subCategory":"painting",
         "title": "Introduction to Painting",
         "subtitle": "Explore the basics of painting techniques",
         "description": "Learn color theory, brushwork, and composition in this foundational painting course designed for beginners.",
@@ -20,6 +21,7 @@
       },
       {
         "id": "art202",
+        "subCategory":"digital-art",
         "title": "Digital Illustration Masterclass",
         "subtitle": "Master the tools and techniques of digital art",
         "description": "Dive into digital illustration using tools like Procreate and Photoshop, guided by industry professionals.",
@@ -35,6 +37,7 @@
       },
       {
         "id": "art303",
+        "subCategory":"sculpture",
         "title": "Sculpture Techniques",
         "subtitle": "Working with clay, metal, and wood",
         "description": "A hands-on course teaching sculpting fundamentals, suitable for both hobbyists and aspiring professionals.",
@@ -50,6 +53,7 @@
       },
       {
         "id": "art404",
+        "subCategory":"modern-art",
         "title": "Modern Art and Critique",
         "subtitle": "Understanding the evolution and impact of modern art",
         "description": "Analyze key movements in modern art and develop critical skills to interpret artistic works.",
@@ -66,11 +70,12 @@
     ]
   },
   {
-    "category": "Science",
+    "category": "science",
     "superID":2,
     "courses": [
       {
         "id": "sci101",
+        "subCategory":"physics",
         "title": "Basics of Physics",
         "subtitle": "Understand the laws of motion and energy",
         "description": "Get introduced to classical mechanics and basic concepts of physics through interactive modules.",
@@ -86,6 +91,7 @@
       },
       {
         "id": "sci202",
+        "subCategory":"organic-chemistry",
         "title": "Organic Chemistry",
         "subtitle": "Dive into the world of carbon compounds",
         "description": "A detailed exploration of organic molecules, reactions, and mechanisms.",
@@ -101,6 +107,7 @@
       },
       {
         "id": "sci303",
+        "subCategory":"astronomy",
         "title": "Introduction to Astronomy",
         "subtitle": "Explore the universe beyond Earth",
         "description": "Discover planets, stars, and galaxies using modern telescopic data.",
@@ -117,11 +124,12 @@
     ]
   },
   {
-    "category": "Commerce",
+    "category": "commerce",
     "superID":3,
     "courses": [
       {
         "id": "com101",
+        "subCategory":"accounting",
         "title": "Principles of Accounting",
         "subtitle": "Master the language of business",
         "description": "Understand the basic concepts of accounting, journal entries, ledgers, and financial statements.",
@@ -137,6 +145,7 @@
       },
       {
         "id": "com202",
+        "subCategory":"micronomics",
         "title": "Microeconomics Explained",
         "subtitle": "Learn how individual markets work",
         "description": "From demand-supply to elasticity and market structures, this course covers it all.",
@@ -152,6 +161,7 @@
       },
       {
         "id": "com303",
+        "subCategory":"business-law",
         "title": "Business Law Basics",
         "subtitle": "Legal aspects every entrepreneur should know",
         "description": "Learn about contracts, partnerships, company law, and more.",

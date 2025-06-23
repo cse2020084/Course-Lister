@@ -1,0 +1,300 @@
+.registration-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100%;
+  padding: 20px;
+  padding-top: 30px;
+  box-sizing: border-box;
+}
+
+.registration-card {
+  width: 100%;
+  max-width: 480px;
+  padding: 24px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  background: white;
+  
+  @media (max-width: 768px) {
+    max-width: 100%;
+    margin: 0 16px;
+    padding: 20px;
+  }
+  
+  @media (max-width: 480px) {
+    margin: 0 8px;
+    padding: 16px;
+  }
+}
+
+.mat-card-header {
+  text-align: center;
+  justify-content: center;
+  
+  .mat-card-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 20px;
+    
+    @media (max-width: 480px) {
+      font-size: 24px;
+    }
+  }
+  
+  .mat-card-subtitle {
+    font-size: 16px;
+    color: #666;
+    font-weight: 400;
+    
+    @media (max-width: 480px) {
+      font-size: 14px;
+    }
+  }
+}
+
+.registration-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  
+  @media (max-width: 480px) {
+    gap: 12px;
+  }
+}
+
+.full-width {
+  width: 100%;
+}
+
+.mat-form-field {
+  &.mat-form-field-appearance-outline {
+    .mat-form-field-outline {
+      border-radius: 8px;
+    }
+    
+    &.mat-focused {
+      .mat-form-field-outline-thick {
+        color: #3f51b5;
+      }
+    }
+  }
+  
+  .mat-form-field-label {
+    color: #666;
+  }
+  
+  .mat-input-element {
+    caret-color: #3f51b5;
+  }
+}
+
+.checkbox-container {
+//   margin: 10px 0;
+  
+  .terms-checkbox {
+    width: 100%;
+    
+    .mat-checkbox-label {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #555;
+      
+      @media (max-width: 480px) {
+        font-size: 13px;
+      }
+    }
+  }
+  
+  .terms-link {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: 500;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  
+  .checkbox-error {
+    font-size: 12px;
+    color: #f44336;
+    margin-top: 8px;
+    display: block;
+  }
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 10px 0 16px 0;
+  justify-content: center;
+  
+  @media (min-width: 481px) {
+    flex-direction: row;
+    gap: 16px;
+  }
+}
+
+.register-btn {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  background: linear-gradient(45deg, #3f51b5, #5c6bc0);
+  color: white;
+  box-shadow: 0 4px 12px rgba(63, 81, 181, 0.3);
+  transition: all 0.3s ease;
+  
+  &:hover:not([disabled]) {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(63, 81, 181, 0.4);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  .mat-icon {
+    margin-right: 8px;
+  }
+  
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.cancel-btn {
+  height: 48px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 8px;
+  border: 2px solid #ff4081;
+  color: #ff4081;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: #ff4081;
+    color: white;
+    transform: translateY(-1px);
+  }
+  
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+}
+
+.card-footer {
+  text-align: center;
+  padding-top: 16px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: 16px;
+  
+  p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+    
+    @media (max-width: 480px) {
+      font-size: 13px;
+    }
+  }
+  
+  .login-link {
+    color: #3f51b5;
+    text-decoration: none;
+    font-weight: 600;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+// Custom Material Theme Overrides
+.mat-raised-button {
+  &.register-btn {
+    .mat-button-ripple {
+      border-radius: 8px;
+    }
+  }
+}
+
+.mat-stroked-button {
+  &.cancel-btn {
+    .mat-button-ripple {
+      border-radius: 8px;
+    }
+  }
+}
+
+// Animation for form validation
+.mat-form-field {
+  &.ng-invalid.ng-touched {
+    .mat-form-field-outline-thick {
+      color: #f44336 !important;
+    }
+  }
+}
+
+.mat-error {
+  font-size: 12px;
+  margin-top: 4px;
+  animation: slideInError 0.3s ease-out;
+}
+
+@keyframes slideInError {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Loading state styles
+.form-loading {
+  .mat-form-field {
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
+
+// Focus styles for accessibility
+.mat-form-field:focus-within {
+  .mat-form-field-outline-thick {
+    border-width: 3px;
+  }
+}
+
+// // High contrast mode support
+// @media (prefers-contrast: high) {
+//   .registration-card {
+//     border: 2px solid #000;
+//   }
+  
+//   .mat-form-field-outline {
+//     border-color: #000 !important;
+//   }
+// }
+
+// // Dark mode support (if needed)
+// @media (prefers-color-scheme: dark) {
+//   .registration-card {
+//     background: #2d2d2d;
+//     color: #fff;
+    
+//     .mat-card-title {
+//       color: #fff;
+//     }
+    
+//     .mat-card-subtitle {
+//       color: #ccc;
+//     }
+//   }
+// }

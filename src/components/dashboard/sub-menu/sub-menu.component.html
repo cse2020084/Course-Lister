@@ -16,7 +16,7 @@
                     </p>
                 </mat-card-content>
                 <mat-card-actions>
-                <button  mat-button *ngFor="let action of courses.actions">{{action}}</button>
+                <button  mat-button *ngFor="let action of courses.actions" (click)="clickOnSubMenu(courses)">{{action}}</button>
                 </mat-card-actions>
           </mat-card>
         </div>

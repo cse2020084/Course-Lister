@@ -45,6 +45,10 @@ export class HeaderComponent implements OnInit {
     this.router.navigate(['/auth/signup']);
   }
 
+  navigateToHome(){
+    this.router.navigate(['/']);
+  }
+
   /**
  * Router combines parent + child paths but here,
  * Navigation needs the complete combined path

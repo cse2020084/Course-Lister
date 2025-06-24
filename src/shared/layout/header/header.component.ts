@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs';
+import { AuthService } from 'src/shared/services/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -10,6 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router:Router,
+    private authService:AuthService
   ) { }
 
   /**
@@ -25,8 +28,12 @@ export class HeaderComponent implements OnInit {
    */
 
   signUpToggle:boolean=true;
-
+  isLoggedIn:boolean=false;
+  isAuthenticated$:Observable<boolean>=this.authService.isAuthenticated$;
   ngOnInit(): void {
+    // this.authService.isAuthenticated$.subscribe((value:boolean)=>{
+    //   this.isLoggedIn=value;
+    // })
   }
 
   /**
@@ -53,5 +60,14 @@ export class HeaderComponent implements OnInit {
  * Router combines parent + child paths but here,
  * Navigation needs the complete combined path
  */
+
+  logOut(){
+    const status=this.authService.logOut();
+    if(status){
+      this.router.navigate(['/auth/signup']);
+    }else{
+      console.log(status)
+    }
+  }
 
 }

@@ -16,7 +16,12 @@
       <div class="auth-buttons">
         <!-- <button class="btn btn-login">Login</button> -->
          <!-- Router Navigation in TypeScript is better approach altogether for flexibility -->
-        <button class="btn btn-signup" (click)="navigateToSignUp()">Sign Up</button>
+        <ng-container *ngIf="isAuthenticated$ | async; else notLoggedIn" >
+          <button class="btn btn-signup" (click)="logOut()">Log Out</button>
+        </ng-container>
+        <ng-template #notLoggedIn>
+          <button class="btn btn-signup" (click)="navigateToSignUp()">Sign In</button>
+        </ng-template>
       </div>
     </div>
   </div>

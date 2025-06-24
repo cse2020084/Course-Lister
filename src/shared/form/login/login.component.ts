@@ -59,14 +59,15 @@ export class LoginComponent implements OnInit {
         isRegistered:true
       }
 
-      const success=this.auth.register(userData);
+      const success=this.auth.logIn(userData);
       if(success){
         this.router.navigate(['/dashboard']);
       }else{
         // this.form.markAllAsTouched();
-        alert('something went wrong')
-        this.form.reset()
+        alert('something went wrong');
+        this.form.reset();
       }
+      
     }
   }
   switchToRegisterComponent(){

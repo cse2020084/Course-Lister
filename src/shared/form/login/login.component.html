@@ -1,8 +1,8 @@
 <div class="registration-container">
   <mat-card class="registration-card">
     <mat-card-header>
-      <mat-card-title>Create Account</mat-card-title>
-      <mat-card-subtitle>Please fill in your details to register</mat-card-subtitle>
+      <mat-card-title>Log Into Account</mat-card-title>
+      <mat-card-subtitle>Please fill in your details to login</mat-card-subtitle>
     </mat-card-header>
     
     <mat-card-content>
@@ -48,39 +48,15 @@
         </mat-form-field>
 
         <!-- Confirm Password Field -->
-        <mat-form-field appearance="outline" class="full-width">
-          <mat-label>Confirm Password</mat-label>
-          <input matInput 
-                 [type]="hideConfirmPassword ? 'password' : 'text'" 
-                 formControlName="confirmpw"
-                 placeholder="Confirm your password">
-          <button mat-icon-button 
-                  matSuffix 
-                  type="button"
-                  (click)="hideConfirmPassword = !hideConfirmPassword" 
-                  [attr.aria-label]="'Hide password'" 
-                  [attr.aria-pressed]="hideConfirmPassword">
-            <mat-icon>{{hideConfirmPassword ? 'visibility_off' : 'visibility'}}</mat-icon>
-          </button>
-          <mat-error *ngIf="confirmpwControl.hasError('required')">
-            Please confirm your password
-          </mat-error>
-          <mat-error *ngIf="confirmpwControl.hasError('notMatch')">
-            Passwords do not match
-          </mat-error>
-        </mat-form-field>
 
         <!-- Terms and Conditions Checkbox -->
-        <div class="checkbox-container">
-          <mat-checkbox formControlName="check" class="terms-checkbox">
-            I agree to the 
-            <a href="#" class="terms-link">Terms and Conditions</a> 
-            and 
-            <a href="#" class="terms-link">Privacy Policy</a>
-          </mat-checkbox>
-          <mat-error *ngIf="checkControl.hasError('requiredTrue')" class="checkbox-error">
-            You must accept the terms and conditions
-          </mat-error>
+
+                <!-- Remember Me & Forgot Password -->
+        <div class="login-options">
+          <!-- <mat-checkbox formControlName="rememberMe" class="remember-checkbox">
+            Remember me
+          </mat-checkbox> -->
+          <a href="#" class="forgot-password-link">Forgot Password?</a>
         </div>
 
       </form>
@@ -94,7 +70,7 @@
               type="submit"
               (click)="submitForm()">
         <mat-icon>person_add</mat-icon>
-        Register
+        Sign-In
       </button>
       
       <button mat-stroked-button 
@@ -107,8 +83,8 @@
     </mat-card-actions>
     
     <mat-card-footer class="card-footer">
-      <p>Already have an account? 
-        <a  class="login-link" (click)="switchToLoginComponent()">Sign in here</a>
+      <p>Do not have an account? 
+        <a  class="login-link" (click)="switchToRegisterComponent()">Sign up here</a>
       </p>
     </mat-card-footer>
 

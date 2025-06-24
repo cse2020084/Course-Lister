@@ -5,14 +5,16 @@ import { MaterialModule } from './common/material.module';
 import { SignupFormComponent } from './form/signup-form/signup-form.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegistrationFormComponent } from './form/registration-form/registration-form.component';
+import { LoginComponent } from './form/login/login.component';
+import { AuthContainerComponent } from './form/auth-container/auth-container.component';
 
 
 
 @NgModule({
-  declarations: [HeaderComponent, SignupFormComponent, RegistrationFormComponent],
+  declarations: [HeaderComponent, SignupFormComponent, RegistrationFormComponent, LoginComponent, AuthContainerComponent],
   imports: [
     CommonModule,MaterialModule,ReactiveFormsModule
   ],
-  exports:[HeaderComponent,MaterialModule,SignupFormComponent,RegistrationFormComponent]
+  exports:[HeaderComponent,MaterialModule,SignupFormComponent,RegistrationFormComponent,AuthContainerComponent,LoginComponent]
 })
 export class SharedModule { }

@@ -1,0 +1,15 @@
+<div class="auth-wrapper">
+  <div class="card-container" [class.flip]="isLoginMode">
+    
+    <!-- Registration Component -->
+    <div class="card-face card-front" *ngIf="!isLoginMode">
+      <app-registration-form (switchToLogin)="toggleMode()"></app-registration-form>
+    </div>
+    
+    <!-- Login Component -->
+    <div class="card-face card-back" *ngIf="isLoginMode">
+      <app-login (switchToRegister)="toggleMode()"></app-login>
+    </div>
+    
+  </div>
+</div>

@@ -20,7 +20,7 @@
           <button class="btn btn-signup" (click)="logOut()">Log Out</button>
         </ng-container>
         <ng-template #notLoggedIn>
-          <button class="btn btn-signup" (click)="navigateToSignUp()">Sign In</button>
+          <button  *ngIf="signUpToggle" class="btn btn-signup" (click)="navigateToSignUp()">Sign In</button>
         </ng-template>
       </div>
     </div>

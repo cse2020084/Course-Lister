@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import {  Router } from '@angular/router';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { AuthService } from 'src/shared/services/auth.service';
 
 @Component({
@@ -12,7 +12,7 @@ export class HeaderComponent implements OnInit {
 
   constructor(
     private router:Router,
-    private authService:AuthService
+    private authService:AuthService,
   ) { }
 
   /**
@@ -27,13 +27,17 @@ export class HeaderComponent implements OnInit {
     *    The navigation will work the same:
    */
 
-  signUpToggle:boolean=true;
+  signUpToggle:boolean=false;
   isLoggedIn:boolean=false;
+  private signInUrl:string='/auth/signup';
+  public currentUrl:string;
   isAuthenticated$:Observable<boolean>=this.authService.isAuthenticated$;
   ngOnInit(): void {
     // this.authService.isAuthenticated$.subscribe((value:boolean)=>{
     //   this.isLoggedIn=value;
     // })
+    this.currentUrl=this.router.url;
+    if(this.signInUrl===this.currentUrl) this.signUpToggle=true;
   }
 
   /**
@@ -49,7 +53,7 @@ export class HeaderComponent implements OnInit {
    */
   navigateToSignUp(){
     console.log('clicked on signup button')
-    this.router.navigate(['/auth/signup']);
+    this.router.navigate([this.signInUrl]);
   }
 
   navigateToHome(){
@@ -64,7 +68,7 @@ export class HeaderComponent implements OnInit {
   logOut(){
     const status=this.authService.logOut();
     if(status){
-      this.router.navigate(['/auth/signup']);
+      this.router.navigate([this.signInUrl]);
     }else{
       console.log(status)
     }

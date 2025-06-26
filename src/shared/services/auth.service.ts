@@ -118,7 +118,7 @@ export class AuthService {
    * Get current login status
    */
 
-  isAuthenticatedOrNot():boolean{
+  get isAuthenticatedOrNot():boolean{
     const loggedIn=localStorage.getItem('LOGIN_STATE')==='true' && this.isAuthenticatedSubject.value;
     return loggedIn;
   }
